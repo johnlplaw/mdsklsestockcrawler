@@ -1,4 +1,4 @@
 # mdsklsestockcrawler
-For Data Mining (WQD7005) Project - sem2 2018/2019
+For Data Mining (WQD7005) group assignment - sem2 2018/2019
 
 
