@@ -7,34 +7,24 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+/**
+ * The main class file for crawl the data
+ * @author QR
+ *
+ */
 public class WebCrawlerKLSE {
 
 	public static void main(String[] args) {
 		
 		try {
 			WebCrawlerCompName crawlCompName = new WebCrawlerCompName();
-			ArrayList<String> compName = crawlCompName.getAllCompByAlphabet();
+			//ArrayList<String> compName = crawlCompName.getAllCompByAlphabet();
+			ArrayList<String> compName = crawlCompName.readCompCodeList();
 			ArrayList<KLSEData> theresultList = new ArrayList<KLSEData>();
 			
-			//ArrayList<String> compName = new ArrayList<String>();
-			//compName.add("D%26O");
-			
 			for (String compCode : compName) {
-				
+				System.out.println(compCode);
 				compCode = escapeKey(compCode);
-				// String compCode = "SAPNRG";
-//				System.out.println(data.getDate());
-//				System.out.println(data.getCompCode());
-//				System.out.println(data.getCompname());
-//				System.out.println(data.getOpenTxt());
-//				System.out.println(data.getHighTxt());
-//				System.out.println(data.getLowTxt());
-//				System.out.println(data.getLastDoneTxt());
-//				System.out.println(data.getChgTxt());
-//				System.out.println(data.getChgPercentTxt());
-//				System.out.println(data.getVolTxt());
-//				System.out.println(data.getBuyTxt());
-//				System.out.println(data.getSellTxt());
 				
 				try {
 					Document doc = Jsoup
@@ -85,6 +75,11 @@ public class WebCrawlerKLSE {
 
 	}
 	
+	/**
+	 * To replace the URL escape keys
+	 * @param str Original String
+	 * @return String without escape key
+	 */
 	private static String escapeKey(String str) {
 		return str.replace("&", "%26");
 	}
