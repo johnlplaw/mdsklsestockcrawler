@@ -26,3 +26,15 @@ select * from klse;
 Coding test:
 select STR_TO_DATE('22 Feb 2019', '%d %M %y')
 SHOW VARIABLES LIKE "%version%";
+
+
+create table CompCat(
+
+  compCode varchar(20),
+  Category varchar(20),
+  Sub_category varchar(50),
+  crawl_Timestamp timestamp
+
+)
+
+select * from CompCat;
