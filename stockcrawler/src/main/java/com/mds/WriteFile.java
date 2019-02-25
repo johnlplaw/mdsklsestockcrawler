@@ -7,11 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * The class for generating csv file of the data 
+ */
 public class WriteFile {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public void writeToCsv(ArrayList<KLSEData> datalist) {
