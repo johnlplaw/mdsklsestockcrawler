@@ -14,6 +14,8 @@ import org.jsoup.nodes.Element;
  */
 public class WebCrawlerKLSE {
 
+	private static ArrayList<String> errList = new ArrayList<String>();
+	
 	public static void main(String[] args) {
 		
 		try {
@@ -57,7 +59,7 @@ public class WebCrawlerKLSE {
 					theresultList.add(data);
 				} catch (Exception e) {
 					System.out.println("Error code: " + compCode );
-					
+					errList.add(compCode);					
 				}
 
 			}
@@ -71,6 +73,10 @@ public class WebCrawlerKLSE {
 		} catch (Exception e) {
 
 			e.printStackTrace();
+		}
+		
+		for(String errComp : errList) {
+			System.out.println(errComp);
 		}
 
 	}
